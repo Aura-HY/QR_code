@@ -1,10 +1,33 @@
-import { createApp } from 'vue';
+// Vue 默认引入
+import { createApp } from 'vue'
+import './style.css'
+import App from './App.vue'
 
-import router from './router';
-import Varlet from '@varlet/ui';
-import '@varlet/ui/es/style';
-// import './style.css';
+// 引入 Varlet 主题库
+import Varlet from '@varlet/ui'
+import '@varlet/ui/es/style'
 
-import App from './App.vue';
 
-const app = createApp(App).use(router).mount('#app').use(Varlet);
+// 使用 Postcss + Themes.toViewport 进行移动端适配
+import { Themes } from '@varlet/ui'
+const viewportTheme = Themes.toViewport(Themes.md3Dark, {
+    // 默认值为 375
+    viewportWidth: 375,
+    // 默认值为 'vmin'
+    viewportUnit: 'vmin',
+    // 默认值为 6
+    unitPrecision: 6,
+})
+
+//引入vue router
+import router from './router/index';
+
+//引入pinia
+import { createPinia } from 'pinia'
+
+const pinia = createPinia()
+
+createApp(App).use(Varlet).use(router).use(pinia).mount('#app')
+
+
+

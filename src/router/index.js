@@ -10,7 +10,22 @@ const routes = [
         path: '/detailShow',
         name: 'detailShow',
         component: () => import('../pages/detailShow.vue')
-    }
+    },
+    {
+        path: '/home',
+        name: 'home',
+        component: () => import('../pages/home.vue')
+    },
+    {
+        path: '/createQE',
+        name: 'createQE',
+        component: () => import('../pages/createQE.vue')
+    },
+    {
+        path: '/updateQE',
+        name: 'updateQE',
+        component: () => import('../pages/updateQE.vue')
+    },
 ];
 
 const router = createRouter({
