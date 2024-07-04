@@ -6,7 +6,7 @@ import Vuesax from 'vuesax-alpha';
 import 'vuesax-alpha/theme-chalk/index.css';
 import 'vuesax-alpha/theme-chalk/dark/css-vars.css';
 
-import './style.css';
+//import './style.css';
 
 import App from './App.vue';
 
