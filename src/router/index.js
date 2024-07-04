@@ -4,12 +4,12 @@ const routes = [
     {
         path: '/',
         name: '',
-        redirect: '/demo'
+        redirect: '/login'
     },
     {
-        path: '/demo',
-        name: 'demo',
-        component: () => import('../pages/demo/demo.vue')
+        path: '/detailShow',
+        name: 'detailShow',
+        component: () => import('../pages/detailShow.vue')
     }
 ];
 
