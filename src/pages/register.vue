@@ -1,7 +1,7 @@
 <template>
   <div class="main">
   <var-app-bar
-  title="登录"
+  title="注册"
   title-position="center"
   color="linear-gradient(90deg, rgba(72,176,221,1) 0%, rgba(0,208,161,1) 100%)"
   />
@@ -16,9 +16,8 @@
         </div>
 
       <div>
-    <var-button @click="gotoRegister" color="linear-gradient(to right, #69dbaa, #3a7afe)" text-color="#fff" style="margin-right: 20%;margin-left: 15%;">注册</var-button>
     <var-button
-      color="linear-gradient(to right, #69dbaa, #3a7afe)" text-color="#fff" >登录
+     color="linear-gradient(to right, #69dbaa, #3a7afe)" text-color="#fff" style="margin-right: 20px;margin-left: 35%;">注册
     </var-button>
         </div>
         
@@ -41,11 +40,9 @@
   };
   },
   methods: {
-    gotoRegister(){
-            this.$router.push({
-                name:'register'
-            });
-        }
+  handleLogin() {
+  // 处理用户登录逻辑
+  }
   }
  };
  </script>
@@ -77,6 +74,7 @@
   inset 5px 5px #FFFF;
   border-radius: .5em;
   background-color:#F2F5FA;
+  margin: 10px;
 }
 
 input {
