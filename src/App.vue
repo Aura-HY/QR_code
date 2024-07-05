@@ -1,6 +1,12 @@
 <template>
-    <router-view></router-view>
-</template>
+<router-view></router-view>
+  </template>
+
+  <style scoped>
+
+  </style>
+  
+
 
 <script lang="js">
 export default {
@@ -21,4 +27,4 @@ export default {
 };
 </script>
 
-<style scoped></style>
+
