@@ -4,21 +4,25 @@
     "version": "0.0.0",
     "type": "module",
     "scripts": {
-      "dev": "vite",
-      "build": "vite build",
-      "preview": "vite preview"
+        "dev": "vite",
+        "build": "vite build",
+        "preview": "vite preview"
     },
     "dependencies": {
-      "@varlet/ui": "^3.3.3",
-      "axios": "^1.6.8",
-      "pinia": "^2.1.7",
-      "vue": "^3.4.19",
-      "vue-router": "^4.3.0"
+        "@varlet/ui": "^3.3.3",
+        "axios": "^1.6.8",
+        "pinia": "^2.1.7",
+        "qrcode-decoder": "^0.3.3",
+        "qrcodejs2": "^0.0.2",
+        "vant": "^4.9.1",
+        "vue": "^3.4.19",
+        "vue-qr": "^4.0.9",
+        "vue-router": "^4.3.0"
     },
     "devDependencies": {
-      "@vitejs/plugin-vue": "^5.0.4",
-      "postcss-px-to-viewport": "^1.1.1",
-      "vite": "^5.1.4"
+        "@vitejs/plugin-vue": "^5.0.4",
+        "postcss-px-to-viewport": "^1.1.1",
+        "qrcode": "^1.5.3",
+        "vite": "^5.1.4"
     }
-  }
-  
+}
