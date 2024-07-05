@@ -25,9 +25,13 @@ import router from './router/index';
 //引入pinia
 import { createPinia } from 'pinia'
 
+import { Uploader,Toast } from "vant";
+
+import 'vant/lib/index.css';
+
 const pinia = createPinia()
 
-createApp(App).use(Varlet).use(router).use(pinia).mount('#app')
+createApp(App).use(Toast).use(Uploader).use(Varlet).use(router).use(pinia).mount('#app')
 
 
 
