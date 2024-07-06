@@ -27,6 +27,7 @@ const routes = [
         component: () => import('../pages/updateQE.vue')
     },
     {
+
         path: '/login',
         name: 'login',
         component: () => import('../pages/login.vue')
@@ -35,6 +36,10 @@ const routes = [
         path: '/register',
         name: 'register',
         component: () => import('../pages/register.vue')
+
+        path: '/altry',
+        name: 'altry',
+
     },
 ];
 
