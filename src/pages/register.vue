@@ -75,7 +75,7 @@
 }
 
 .card {
-  height: 40%;
+  height: 41%;
   width: 65%;
   padding: 30px;
   box-shadow:
