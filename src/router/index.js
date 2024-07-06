@@ -26,6 +26,11 @@ const routes = [
         name: 'updateQE',
         component: () => import('../pages/updateQE.vue')
     },
+    {
+        path: '/altry',
+        name: 'altry',
+        component: () => import('../pages/altry.vue')
+    },
 ];
 
 const router = createRouter({
