@@ -9,15 +9,14 @@
   <div class="container">
       <div class="card">
         <div >
-          <var-input  variant="outlined" placeholder="id" style="margin-bottom: 25px;margin-top:15%;"  v-model="value" />
+          <var-input  variant="outlined" placeholder="id" style="margin-bottom: 25px;margin-top:15%;" type="userId" v-model=" userRegister.userId" />
         </div>
         <div>
-          <var-input variant="outlined" label="确认密码" placeholder="password" style="margin-bottom: 20%;margin-top:18%;" type="password" v-model="password" />
+          <var-input variant="outlined" label="确认密码" placeholder="password" style="margin-bottom: 20%;margin-top:18%;" type="password" v-model="userRegister.password" />
         </div>
 
       <div>
-    <var-button
-     color="linear-gradient(to right, #69dbaa, #3a7afe)" text-color="#fff" style="margin-right: 20px;margin-left: 35%;">注册
+    <var-button @click="gotologin" color="linear-gradient(to right, #69dbaa, #3a7afe)" text-color="#fff" style="margin-right: 20px;margin-left: 35%;">注册
     </var-button>
         </div>
         
@@ -32,19 +31,30 @@
  </template>
  
  <script>
+ import { Snackbar } from '@varlet/ui';
+ import user from '../api/user';
  export default {
   data() {
   return {
-  username: '',
-  password: ''
+  userRegister:{
+    userId: '',
+    password: ''
+  }
+  
   };
   },
   methods: {
-  handleLogin() {
-  // 处理用户登录逻辑
+    async gotologin(){
+      if(this.userRegister.userId===''||this.userRegister.password===''){
+      Snackbar.error('注册失败');
+    }else{
+      Snackbar.success('注册成功');
+      await user.addUser(this.userRegister.userId,this.userRegister.password)
+      this.$router.push({name:'login'})
+    }
   }
-  }
- };
+ },
+}
  </script>
  
  <style scoped>
