@@ -7,9 +7,19 @@ const user = {
     getUserInfo(data) {
         return request(`${moduleUrl}/getUserInfo`, data);
     },
+
+    login(userId, password) {
+        return request(`${moduleUrl}/login`,{userId, password} );
+    },
+    addUser(userId, password) {
+        return request(`${moduleUrl}/addUser`,{userId, password} );
+    },
+    
+
     getQRCodeDetail(qrcodeName) {
         return request(`${moduleUrl}/detail`, { qrcodeName });
     }
+
 };
 
 export default user;
