@@ -5,14 +5,14 @@
         <div v-ripple ></div>
 
         <var-app-bar
-          title="xx群" 
+          :title=qrcodeName 
           title-position="center" 
           color="linear-gradient(90deg, rgba(72,176,221,1) 0%, rgba(0,208,161,1) 100%)"
           style="width: 60%; margin-top: 180px;"v-ripple
           />
         </div>
         <div class="image-container">
-        <img src="../../public/erweima.jpg" alt="Centered Image" class="centered-image">
+        <img :src=qrcodeUrl alt="Centered Image" class="centered-image">
       
       </div>
       <!-- <img src="../../public/chigua.gif" 
@@ -22,6 +22,28 @@
     </div>
   </template>
   
+
+  <script>
+  import user from '@/api/user.js';
+  export default {
+      data() {
+        return {
+            qrcodeName: this.$route.params.QRname,
+            qrcodeUrl:''
+          };
+      },
+      created() {
+        this.getQRCodeDetail(this.qrcodeName);
+      },
+      methods: {
+        async getQRCodeDetail(qrcodeName) {
+          const result = await user.getQRCodeDetail(qrcodeName);
+          this.qrcodeUrl = result[0].erWeima;
+        }
+      }
+  };
+  </script>
+
   <style scoped>
   .body video {
   position: absolute;
@@ -77,14 +99,5 @@
   
   
 
-<script>
-import user from '@/api/user.js';
-export default {
-    data() {
-        return {};
-    },
 
-    methods: {}
-};
-</script>
 
